@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
 * {
   box-sizing: border-box;
   font-weight: normal;
 }
 
-header{
-    color:gold;
-    width: 100%;
-    height: 70px;
-    z-index: 200;
-    margin-bottom: 5%;
+header {
+  color: gold;
+  width: 100%;
+  height: 70px;
+  z-index: 200;
+  margin-bottom: 5%;
 }
 
-body{
+body {
   color: #555;
   text-align: center;
   font-family: 'Roboto Mono';
@@ -22,10 +23,9 @@ body{
   background: linear-gradient(to top, #86377b 20%, #27273c 80%);
 }
 
-footer{
-  color:white;
+footer {
+  color: white;
   width: 100%;
-  
 }
 
 h1 {
@@ -36,20 +36,34 @@ h2 {
   font-size: 1.5em;
 }
 
+.contact__text{
+  text-align: left;
+}
+.logo__size{
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-top: 2%;
+}
 .flip {
   position: relative;
 }
-.flip > .front,
-.flip > .back {
+
+.flip>.front,
+.flip>.back {
+  align-items: center;
+  justify-content: center;
   display: block;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 2.5s;
   transition-property: transform, opacity;
 }
-.flip > .front {
+
+.flip>.front {
   transform: rotateY(0deg);
 }
-.flip > .back {
+
+.flip>.back {
   position: absolute;
   opacity: 0;
   top: 0px;
@@ -58,20 +72,25 @@ h2 {
   height: 100%;
   transform: rotateY(-180deg);
 }
-.flip:hover > .front {
+
+.flip:hover>.front {
   transform: rotateY(180deg);
 }
-.flip:hover > .back {
+
+.flip:hover>.back {
   opacity: 1;
   transform: rotateY(0deg);
 }
-.flip.flip-vertical > .back {
+
+.flip.flip-vertical>.back {
   transform: rotateX(-180deg);
 }
-.flip.flip-vertical:hover > .front {
+
+.flip.flip-vertical:hover>.front {
   transform: rotateX(180deg);
 }
-.flip.flip-vertical:hover > .back {
+
+.flip.flip-vertical:hover>.back {
   transform: rotateX(0deg);
 }
 
@@ -82,9 +101,21 @@ h2 {
   margin-bottom: 1em;
   width: 300px;
 }
-.flip > .front,
-.flip > .back {
-  display: block;
+
+.flip>.front{ 
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: black;
+  width: inherit;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 220px;
+  padding: 1em 2em;
+  background: #b476ac;
+  border-radius: 10px;
+}
+.flip>.back{
   color: white;
   width: inherit;
   background-size: cover !important;
@@ -94,8 +125,9 @@ h2 {
   background: #313131;
   border-radius: 10px;
 }
-.flip > .front p,
-.flip > .back p {
+.flip>.front p,
+.flip>.back p {
+  text-align: center;
   font-size: 0.9125rem;
   line-height: 100%;
   color: #999;
@@ -105,11 +137,167 @@ h2 {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
 
-.row__space{
-margin-bottom: 30px;
+.row__space {
+  margin-bottom: 30px;
+}
 
+.map__size {
+  width: 425px;
+  height: 200px;
+}
+
+.context {
+  width: 100%;
+  position: absolute;
+  top: 50vh;
+}
+
+.context h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+.area {
+  background: #4e54c8;
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  background-image: url("./resources/LIPSTICK.svg");
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  background-image: url("./resources/NAILPOLISH.svg");
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+  background-image: url("./resources/HAIRDRESSER.svg");
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+  background-image: url("./resources/NAILPOLISH.svg");
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+  background-image: url("./resources/HAIRDRESSER.svg");
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+  background-image: url("./resources/HAIRDRYER.svg");
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+  background-image: url("./resources/LIPSTICK.svg");
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+  background-image: url("./resources/NAILPOLISH.svg");
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+  background-image: url("./resources/HAIRDRYER.svg");
+}
+
+.circles li:nth-child(10) {
+  left: 10%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+  background-image: url("./resources/HAIRDRESSER.svg");
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-  .row__space{margin-bottom: 5px;}
+  .row__space {
+    margin-bottom: 5px;
+  }
+
+  .map__size {
+    width: 300px;
+    height: 200px;
+  }
+  .contact__text{
+    text-align: center;
+  }
 }
