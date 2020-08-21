@@ -36,15 +36,27 @@ h2 {
   font-size: 1.5em;
 }
 
-.contact__text{
+a {
+  color: white;
+
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact__text {
   text-align: left;
 }
-.logo__size{
+
+.logo__size {
   width: 100%;
   max-height: 100%;
   object-fit: contain;
   margin-top: 2%;
 }
+
 .flip {
   position: relative;
 }
@@ -102,7 +114,7 @@ h2 {
   width: 300px;
 }
 
-.flip>.front{ 
+.flip>.front {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -115,7 +127,8 @@ h2 {
   background: #b476ac;
   border-radius: 10px;
 }
-.flip>.back{
+
+.flip>.back {
   color: white;
   width: inherit;
   background-size: cover !important;
@@ -125,6 +138,7 @@ h2 {
   background: #313131;
   border-radius: 10px;
 }
+
 .flip>.front p,
 .flip>.back p {
   text-align: center;
@@ -163,6 +177,7 @@ h2 {
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 100vh;
+  position: absolute;
 }
 
 .circles {
@@ -297,7 +312,17 @@ h2 {
     width: 300px;
     height: 200px;
   }
-  .contact__text{
+
+  .contact__text {
     text-align: center;
+  }
+
+  .circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }
